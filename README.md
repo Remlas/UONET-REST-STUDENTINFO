@@ -10,8 +10,14 @@ Download and launch app from [Docker Hub](https://hub.docker.com/repository/dock
 docker pull remlas/uonet-rest-studentinfo
 ```
 
+## Launch
+
+```bash
+docker run -d -p 5000:5000 remlas/uonet-rest-studentinfo
+```
+
 ## How to use
-POST to app root url "/" with JSON data in body:
+POST to app root url like "http://localhost:5000/" (no SSL yet, use on localhost only, sorry!) with JSON data in body:
 ```json
 {
   "token": "GD12A2E",
@@ -35,6 +41,7 @@ It will return these informations:
 }
 ```
 
+It should be latest middle school of student. See [main.py](main.py) for some exceptions. Currently doesn't return any special debug info, when cannot register (when for example token/symbol/pin is wrong).
 
 ## Thanks to
 @kapi2289 - [vulcan-api](https://github.com/kapi2289/vulcan-api)
